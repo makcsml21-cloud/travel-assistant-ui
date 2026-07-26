@@ -33,7 +33,6 @@
       userInput.value = '';
 
       try {
-        // Полный URL бэкенда на Render
         const response = await fetch('https://travel-assistant-backend-z9tr.onrender.com/chat', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
@@ -42,7 +41,6 @@
             history: [],
             model: 'llama-3.2-1b-instruct'
           }),
-          // Увеличиваем таймаут, чтобы Render успел проснуться
           signal: AbortSignal.timeout(90000)
         });
 
